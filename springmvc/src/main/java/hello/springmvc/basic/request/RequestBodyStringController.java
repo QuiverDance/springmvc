@@ -48,14 +48,6 @@ public class RequestBodyStringController {
         return new HttpEntity<>("ok");
     }
 
-    @PostMapping("/request-body-string-v3")
-    public HttpEntity<String> requestBodyStringV3(RequestEntity<String> httpEntity) throws IOException {
-        String messageBody = httpEntity.getBody();
-
-        log.info("messageBody={}", messageBody);
-        return new ResponseEntity<>("ok", HttpStatus.OK);
-    }
-
     @ResponseBody
     @PostMapping("/request-body-string-v4")
     public String requestBodyStringV4(@RequestBody String messageBody) throws IOException {
